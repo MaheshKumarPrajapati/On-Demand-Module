@@ -1,0 +1,33 @@
+/*
+ * Copyright 2018 Google LLC.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+include ':app'
+include ':assets'
+include ':java'
+include ':kotlin'
+include ':native'
+include ':sharing_module'
+include ':testmodule'
+
+// Allows to have the four features modules shown in AS's Android view
+// without an empty "features" module.
+project(":assets").projectDir = new File(rootDir, "features/assets")
+project(":java").projectDir = new File(rootDir, "features/java")
+project(":kotlin").projectDir = new File(rootDir, "features/kotlin")
+project(":native").projectDir = new File(rootDir, "features/native")
+project(":sharing_module").projectDir = new File(rootDir, "features/sharing_module")
+project(":testmodule").projectDir = new File(rootDir, "features/testmodule")
+
